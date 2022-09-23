@@ -1,0 +1,1 @@
+json.extract! blurb, :title, :sub_title, :created

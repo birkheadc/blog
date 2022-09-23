@@ -1,0 +1,17 @@
+.main-nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: ghostwhite;
+  font-size: 1.5rem;
+  font-family: 'Indie Flower', cursive;
+}
+
+.nav-link:hover, .nav-link:active {
+  color: aquamarine;
+}
