@@ -2,12 +2,12 @@ header {
   position: fixed;
   text-align: center;
   width: 100%;
-  background-color: brown;
-  color: bisque;
+  background-color: var(--clr-bg-sec  );
+  color: var(--clr-text-sec);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.75em 1em 0.5em 1em;
 }
 
 header h1 {

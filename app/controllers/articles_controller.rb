@@ -3,12 +3,15 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    # id = Article.order(:created).first.id
+    # redirect_to controller: :articles, action: :show, id: id
   end
 
   # GET /articles/1 or /articles/1.json
   def show
     @article = Article.find(params[:id])
+    @prev_article_id = @article.prev ? @article.prev.id : nil
+    @next_article_id = @article.next ? @article.next.id : nil
   end
 
 

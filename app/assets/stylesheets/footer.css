@@ -1,4 +1,6 @@
 footer {
-  background-color: aquamarine;
+  background-color: var(--clr-bg-sec);
+  color: var(--clr-text-sec);
   text-align: center;
+  padding: 0.5rem 0
 }

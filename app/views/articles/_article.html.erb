@@ -1,10 +1,26 @@
 <article id="<%= dom_id article %>">
   <div class="article-head">
-    <h2><%= article.title %></h2>
-    <hr>
-    <h3><%= article.sub_title %></h3>
-    <p class="posted-date">Posted: <%= article.created.strftime("%Y/%m/%d") %></p>
+    <div class="article-title-bar">
+      <%= link_to '<<', {controller: :articles, action: :show, id: @prev_article_id}, class: 'article-title-bar-button article-title-bar-button-active' unless @prev_article_id == nil %>
+      <%= link_to '<<', 'javascript:;', class: 'article-title-bar-button article-title-bar-button-inactive' if @prev_article_id == nil %>
+      <div>
+        <h2><%= article.title %></h2>
+        <hr>
+        <h3><%= article.sub_title %></h3>
+        <hr>
+        <p class="posted-date">Posted <%= article.created.strftime("%Y/%m/%d") %></p>
+      </div>
+      <%= link_to '>>', {controller: :articles, action: :show, id: @next_article_id}, class: 'article-title-bar-button article-title-bar-button-active' unless @next_article_id == nil %>
+      <%= link_to '>>', 'javascript:;', class: 'article-title-bar-button article-title-bar-button-inactive' if @next_article_id == nil %>
+    </div>
   </div>
   <p class="article-content"  ><%= article.content %></p>
+  
+  <div class="article-foot-buttons-wrapper">
+    <%= link_to 'Earlier Article', {controller: :articles, action: :show, id: @prev_article_id}, class: 'article-title-bar-button article-title-bar-button-active' unless @prev_article_id == nil %>
+    <%= link_to 'No Earlier Articles!', 'javascript:;', class: 'article-title-bar-button article-title-bar-button-inactive' if @prev_article_id == nil %>
+    <%= link_to 'Later Article', {controller: :articles, action: :show, id: @next_article_id}, class: 'article-title-bar-button article-title-bar-button-active' unless @next_article_id == nil %>
+    <%= link_to 'No Later Articles', 'javascript:;', class: 'article-title-bar-button article-title-bar-button-inactive' if @next_article_id == nil %>
+  </div>
 
 </article>
