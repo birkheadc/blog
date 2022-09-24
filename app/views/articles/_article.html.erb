@@ -8,7 +8,9 @@
         <hr>
         <h3><%= article.sub_title %></h3>
         <hr>
-        <p class="posted-date">Posted <%= article.created.strftime("%Y/%m/%d") %></p>
+        <p class="posted-date">Posted <%= article.created_at.strftime("%Y/%m/%d") %></p>
+        <p class="posted-date"> <%= "Edited #{article.updated_at.strftime("%Y/%m/%d")}" unless article.created_at.strftime("%Y/%m/%d") == article.updated_at.strftime("%Y/%m/%d") %></p>
+
       </div>
       <%= link_to '>>', {controller: :articles, action: :show, id: @next_article_id}, class: 'article-title-bar-button article-title-bar-button-active' unless @next_article_id == nil %>
       <%= link_to '>>', 'javascript:;', class: 'article-title-bar-button article-title-bar-button-inactive' if @next_article_id == nil %>

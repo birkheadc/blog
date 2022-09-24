@@ -5,6 +5,7 @@
 <br>
 
 <div>
+  <%= button_to 'Delete this article', {controller: :articles, action: :destroy, id: @article.id}, method: :delete %>
   <%= link_to "Show this article", @article %> |
   <%= link_to "Back to articles", articles_path %>
 </div>
