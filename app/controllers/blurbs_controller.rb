@@ -5,7 +5,7 @@ class BlurbsController < ApplicationController
   end 
 
   def get_blurbs(n)
-    articles = Article.pluck(:title, :sub_title, :created)
+    articles = Article.order(created_at: :desc).first(n).pluck(:title, :sub_title, :created_at)
     blurbs = []
     for article in articles
       blurbs.push(Blurb.new(article[0], article[1], article[2]))

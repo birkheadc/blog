@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :authenticate, except: %i[ index show ]
+  http_basic_authenticate_with name: 'admin', password: ENV['RAILS_BLOG_PASSWORD'], except: %i[ index show ]
 
   # GET /articles or /articles.json
   def index
@@ -72,10 +72,5 @@ class ArticlesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :sub_title, :content, :created, :edited, :language)
-    end
-
-    def authenticate
-      # TODO
-      redirect_to root_path
     end
 end
