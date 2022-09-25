@@ -1,16 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
   http_basic_authenticate_with name: 'admin', password: ENV['RAILS_BLOG_PASSWORD'], except: %i[ index show ]
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
   # GET /articles or /articles.json
   def index
-    # id = Article.order(:created).first.id
-    # redirect_to controller: :articles, action: :show, id: id
+    id = Article.order(:created).last.id if Article.order(:created).last
+    redirect_to controller: :articles, action: :show, id: id if id
+    redirect_to controller: :error, action: :index unless id
   end
 
   # GET /articles/1 or /articles/1.json
   def show
-    @article = Article.find(params[:id])
     @prev_article_id = @article.prev ? @article.prev.id : nil
     @next_article_id = @article.next ? @article.next.id : nil
   end
@@ -64,13 +65,13 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :sub_title, :content, :created, :edited, :language)
-    end
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.require(:article).permit(:title, :sub_title, :content, :created, :edited, :language)
+  end
 end
