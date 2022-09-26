@@ -38,6 +38,7 @@ article h3 {
   border-style: double;
   border-width: 5px 0;
   border-radius: 1.5em;
+  white-space: pre-wrap;
 }
 
 .article-head {

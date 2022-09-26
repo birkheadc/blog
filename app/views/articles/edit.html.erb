@@ -1,11 +1,7 @@
-<h1>Editing article</h1>
-
-<%= render "form", article: @article %>
-
-<br>
-
-<div>
-  <%= button_to 'Delete this article', {controller: :articles, action: :destroy, id: @article.id}, method: :delete %>
-  <%= link_to "Show this article", @article %> |
-  <%= link_to "Back to articles", articles_path %>
+<div class="form-page">
+  <h2>Editing article</h2>
+  <%= render "form", article: @article %>
+  <div class="articles-form-submit-wrapper">
+    <%= button_to 'Delete this article', {controller: :articles, action: :destroy, id: @article.id}, method: :delete, class: "articles-form-submit" %>
+  </div>
 </div>

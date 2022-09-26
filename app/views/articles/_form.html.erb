@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
+  <div class="articles-form">
+    <div class="articles-form-row">
+      <div>
+        <%= form.label :title %>
+        <%= form.text_field :title, class:"articles-form-page-text-input" %>
+      </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+      <div>
+        <%= form.label :sub_title %>
+        <%= form.text_field :sub_title, class:"articles-form-page-text-input" %>
+      </div>
+
+      <div class="articles-form-language">
+      <%= form.label :language %>
+      <%= form.text_field :language, class:"articles-form-page-text-input" %>
+      </div>
+    </div>
+    <div class="articles-form-row">
+      <div class="articles-form-content">
+        <%= form.text_area :content %>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :sub_title, style: "display: block" %>
-    <%= form.text_field :sub_title %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div>
-    <%= form.label :language, style: "display: block" %>
-    <%= form.text_field :language %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="articles-form-submit-wrapper">
+    <%= form.submit class:"articles-form-submit"%>
   </div>
 <% end %>

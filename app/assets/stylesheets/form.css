@@ -1,0 +1,115 @@
+.form-page {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--clr-text-pri);
+}
+
+.articles-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-style: double;
+  border-width: 5px 0;
+  border-radius: 1.5em;
+  padding: 3em 1em;
+}
+
+.articles-form-page-text-input {
+  background-color: var(--clr-bg-pri);
+
+  border-style: solid;
+  border-color: var(--clr-text-pri);
+  border-radius: 1rem;
+
+  padding: 0.5em 1em;
+  
+  outline: none;
+}
+
+.articles-form-page-text-input:focus {
+  border-color: var(--clr-accent-pri);
+}
+
+.form-page label {
+  font-family: 'Stint Ultra Condensed', cursive;
+  font-size: 2rem;
+}
+
+.articles-form-submit-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.articles-form-submit {
+  margin: 1em auto;
+  padding: 0.25em 0.5em;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1rem;
+
+  background-color: var(--clr-bg-sec);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--clr-text-pri);
+  color: var(--clr-bg-pri);
+}
+
+.articles-form-submit:active {
+  background-color: var(--clr-bg-pri);
+  color: var(--clr-bg-sec);
+}
+
+.form-page h2{
+  font-size: 4rem;
+  font-family: 'Stint Ultra Condensed', cursive;
+  text-align: center;
+}
+
+.articles-form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.articles-form-row>div {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles-form-language {
+  width: 100px;
+}
+
+.articles-form-language>input {
+  width: 100%;
+}
+
+.articles-form-content {
+  width: 100%;
+  height: 50vh;
+  border-style: solid;
+  border-width: 2px;
+  padding: 1em;
+  border-color: var(--clr-text-pri);
+  border-radius: 1rem;
+}
+
+.articles-form-content:focus-within {
+  border-color: var(--clr-accent-pri);
+}
+
+.articles-form-row textarea {
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-bg-pri);
+  border: none;
+}
+
+.articles-form-row textarea:focus {
+  outline:none;
+}
