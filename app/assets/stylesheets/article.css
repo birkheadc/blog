@@ -43,7 +43,7 @@ article h3 {
 
 .article-head {
   text-align: center;
-  width: fit-content;
+  width: min(100%, 800px);
 
   margin: 0 auto;
 }
@@ -51,7 +51,7 @@ article h3 {
 .article-title-bar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
