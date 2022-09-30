@@ -71,3 +71,5 @@ production:
   username: blog
   password: <%= ENV["RAILS_BLOG_PRODUCTION_DATABASE_PASSWORD"] %>
   timeout: 5000
+
+  host: blog-db

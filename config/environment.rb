@@ -6,4 +6,5 @@ if Rails.env.development?
   load(credentials_config) if File.exists?(credentials_config)
 end
 # Initialize the Rails application.
+
 Rails.application.initialize!
