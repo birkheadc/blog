@@ -23,8 +23,8 @@ The view is built with Rails for now, but I am contemplating bringing in a front
 # Authentication
 Articles (and Blurbs) should be viewable by anyone, but creating, editing, and deleting should only be done by the admin. There should only be one admin, so there is no need to create a User model with Usernames and Passwords, just a single password needs to exist.
 
-I've done this by storing the password in an environment variable called `RAILS_BLOG_PASSWORD`. In development, this should be declared in a file `/config/credentials.rb`, which is in .gitignore. Add a line like so:
+I've done this by storing the password in an environment variable called `RAILS_BLOG_PASSWORD`. In development, this should be declared in a file `/config/secrets.rb`, which is in .gitignore. Add a line like so:
 ```
 ENV['RAILS_BLOG_PASSWORD'] = 'foobar'
 ```
-In production, I recommend declaring the environment variable through Docker. The application will not check the credentials file except in Development.
+In production, I recommend declaring the environment variable through Docker. The application will not check the secrets file except in Development.
